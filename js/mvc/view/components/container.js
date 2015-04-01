@@ -6,8 +6,9 @@ rpApp.view.components.Container = function(settings) {
 
     var defaults = {
         "class": "rp-container",
-        "id": "",
-        "period": 30
+        "name": "",
+        "bordered": false,
+        "items": []
     };
 
     rpApp.view.components.Container.superclass.constructor.call(this, defaults, settings);
@@ -21,10 +22,10 @@ rpApp.view.components.Container.prototype.render = function() {
 
     view.id = this.settings.id;
     view.setAttribute("class", this.settings.class);
-
-    view.style.width= "100%";
-    view.style.height = "100%";
-    view.style.opacity = "1.0";
+    console.log(this.settings);
+    //view.style.width= "100%";
+    //view.style.height = "100%";
+    //view.style.opacity = "1.0";
 
     this.html = view;
     return view;

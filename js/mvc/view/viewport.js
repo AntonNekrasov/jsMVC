@@ -47,7 +47,7 @@ rpApp.Viewport.prototype.render = function() {
     }
 
     //todo: remove it;
-    viewport.appendChild(obj.render());
+    viewport.appendChild(obj.html);
     // rpApp.create("BookList", {});
 
     document.body.innerHTML = "";

@@ -50,7 +50,6 @@ var rpApp = (function () {
         });
 
         rpApp.extend(ext, namespace(settings.extends));
-
     }
 
     function create(name) {

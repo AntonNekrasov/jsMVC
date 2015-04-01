@@ -7,7 +7,8 @@ rpApp.view.components.View = function(settings) {
     var defaults = {
         "class": "rp-view",
         "id": "",
-        "period": 30
+        "period": 30,
+        "sections": []
     };
     rpApp.view.components.View.superclass.constructor.call(this, defaults, settings);
 
@@ -17,7 +18,9 @@ rpApp.extend(rpApp.view.components.View, rpApp.BaseComponent);
 
 rpApp.view.components.View.prototype.render = function() {
     "use strict";
-    var view = document.createElement("DIV");
+    var self = this,
+        view = document.createElement("DIV"),
+        containers = self.settings.sections;
 
     view.id = this.settings.id;
     view.setAttribute("class", this.settings.class);
@@ -25,6 +28,13 @@ rpApp.view.components.View.prototype.render = function() {
     view.style.width= "100%";
     view.style.height = "100%";
     view.style.opacity = "1.0";
+
+    for(var i = 0, lth = containers.length; i < lth; i++) {
+        var container = containers[i];
+
+        self[container.id] = new rpApp.view.components.Container(container);
+        view.appendChild(self[container.id].html);
+    }
 
     this.html = view;
     return view;
