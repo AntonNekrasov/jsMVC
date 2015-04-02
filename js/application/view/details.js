@@ -11,7 +11,10 @@ rpApp.define("itechart.mvc.project.view.BookDetails", {
                 "class": "",
                 "items": [
                     {
-
+                        "type": "Text",
+                        "label": "Title",
+                        "placeholder": "type book title here...",
+                        "validation": {} // todo: update;
                     }, {
 
                     }, {

@@ -97,7 +97,9 @@ var rpApp = (function () {
 rpApp.model = {};
 
 rpApp.view = {
-    "components": {}
+    "components": {
+        "form": {}
+    }
 };
 
 rpApp.controller = {};
