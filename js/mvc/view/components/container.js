@@ -5,7 +5,7 @@ rpApp.view.components.Container = function(settings) {
     "use strict";
 
     var defaults = {
-        "class": "rp-container",//to do: make it extensible;
+        "class": "",
         "name": "",
         "bordered": false,
         "items": []
@@ -33,22 +33,33 @@ rpApp.view.components.Container.prototype.render = function() {
     "use strict";
     var self = this,
         container = document.createElement("DIV"),
-        items = this.settings.items,
+        items = self.settings.items,
         lth = items.length,
         widthCls = self.containerWidths[lth];
 
     container.id = this.settings.id;
-    container.setAttribute("class", this.settings.class);
-    container.addClassName(this.settings.class);
+    container.addClassName("rp-container");
+    container.addClassName(self.settings.class);
 
     if(widthCls) {
         container.addClassName(widthCls);
     }
-
+    
     for(var i = 0; i < lth; i++) {
-        var item = document.createElement("DIV");
-            item.addClassName("rp-container-section");
-        container.appendChild(item);
+        var item = items[i],
+            elt;
+        if(item.type && rpApp.view.components.form[item.type]) {
+            elt = new rpApp.view.components.form[item.type](item).html;//todo: add components reference to container
+        } else {
+            elt = document.createElement("DIV");
+            elt.addClassName("rp-container-section");
+        }
+        console.log(elt);
+        container.appendChild(elt);
+
+        // var item = document.createElement("DIV");
+            // item.addClassName("rp-container-section");
+        // container.appendChild(item);
         // todo: add component;
     }
 

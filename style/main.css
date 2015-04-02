@@ -34,6 +34,7 @@ html, body {
 }
 .rp-container {
 	background: #DDDDDD;
+	overflow: auto;
 	padding: 0;
 	margin: 1em;
 }

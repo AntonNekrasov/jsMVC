@@ -4,8 +4,8 @@
 rpApp.BaseComponent = function(defaults, settings) {
     "use strict";
 
-    this.html;
-
+    this.html = "";
+    //todo: add check for id;
     this.settings = rpApp.mergeLeft(defaults, settings);
     this.render();
 };
