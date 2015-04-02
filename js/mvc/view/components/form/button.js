@@ -47,7 +47,7 @@ rpApp.view.components.Container.prototype.render = function() {
 
     for(var i = 0; i < lth; i++) {
         var item = document.createElement("DIV");
-            item.addClassName("rp-container-section");
+        item.addClassName("rp-container-section");
         container.appendChild(item);
         // todo: add component;
     }

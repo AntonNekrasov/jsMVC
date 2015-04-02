@@ -29,7 +29,6 @@ var rpApp = (function () {
     }
 
     function launch(globals, viewport){
-
         var defaults = {
                 "name": "rpApp application",
                 "namespace": ""
@@ -100,9 +99,9 @@ rpApp.model = {};
 rpApp.view = {
     "components": {}
 };
+
 rpApp.controller = {};
 
-    
 rpApp.callback = function Callback(fn, scope, parameters) {
     "use strict";
     this.fn = fn;

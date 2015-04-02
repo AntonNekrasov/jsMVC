@@ -50,6 +50,9 @@ html, body {
 	float: left;
 	padding: 0.5em 1em; 
 }
+.rp-container.one > .rp-container-section {
+    width: 100%!important;
+}
 .rp-container.two > .rp-container-section {
 	width: 50%!important;
 }
