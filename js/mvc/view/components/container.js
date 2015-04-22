@@ -8,7 +8,8 @@ rpApp.view.components.Container = function(settings) {
         "class": "",
         "name": "",
         "bordered": false,
-        "items": []
+        "items": [],
+        "id": ""
     };
 
     this.containerWidths = {
@@ -23,7 +24,7 @@ rpApp.view.components.Container = function(settings) {
         "9": "nine",
         "10": "ten"
     };
-
+    
     rpApp.view.components.Container.superclass.constructor.call(this, defaults, settings);
 };
 
@@ -36,8 +37,8 @@ rpApp.view.components.Container.prototype.render = function() {
         items = self.settings.items,
         lth = items.length,
         widthCls = self.containerWidths[lth];
-
-    container.id = this.settings.id;
+    
+    container.id = self.settings.id;
     container.addClassName("rp-container");
     container.addClassName(self.settings.class);
 
@@ -54,7 +55,6 @@ rpApp.view.components.Container.prototype.render = function() {
             elt = document.createElement("DIV");
             elt.addClassName("rp-container-section");
         }
-        console.log(elt);
         container.appendChild(elt);
 
         // var item = document.createElement("DIV");
@@ -63,6 +63,7 @@ rpApp.view.components.Container.prototype.render = function() {
         // todo: add component;
     }
 
-    this.html = container;
+    self.html = container;
+    
     return container;
 };

@@ -81,6 +81,10 @@ html, body {
 .rp-container.ten > .rp-container-section {
 	width: 10%!important;
 }
+label {
+	width: 10%;
+}
+
 .rp-hidden {
     display: none!important;
     visibility: hidden!important;

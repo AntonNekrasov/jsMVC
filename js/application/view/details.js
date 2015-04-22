@@ -2,13 +2,14 @@
 /*globals rpApp */
 rpApp.define("itechart.mvc.project.view.BookDetails", {
         extends: "rpApp.view.components.View",
-        id: "BookDetails",
+        id: "bookDetails",
         type: "view", //add type form
         sections: [
             {
                 "name": "",
                 "bordered": false,
                 "class": "",
+                "id": "bookTitleSection",
                 "items": [
                     {
                         "type": "Text",
@@ -23,13 +24,16 @@ rpApp.define("itechart.mvc.project.view.BookDetails", {
                     }
                 ]
             }, {
-                "items": {
-
-                }
+                "name": "",
+                "bordered": false,
+                "class": "",
+                "items": []
             }, {
-                "items": {
-
-                }
+                "name": "",
+                "bordered": false,
+                "class": "",
+                "id": "thirdSection",
+                "items": []
             }
         ]
     }

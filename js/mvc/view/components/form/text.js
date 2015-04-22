@@ -4,6 +4,7 @@
 rpApp.view.components.form.Text = function(settings) {"use strict";
 
     var defaults = {
+        "id": "",
         "label" : "",
         "class": "",
         "placeholder" : "",
@@ -20,11 +21,19 @@ rpApp.view.components.form.Text.prototype.render = function() {
 
     var self = this,
         formElement = rpApp.view.components.form.Text.superclass.render.call(this),
-        text = document.createElement("input");
+        text = document.createElement("input"),
+        label = document.createElement("label"),
+        id = self.settings.id;
     
     text.type = "text";
     text.addClassName(self.settings.class);
-
+    text.id = id;
+    
+    label.setAttribute("for", id);
+    label.textContent = self.settings.label;
+    label.innerText = self.settings.label;
+    
+    formElement.appendChild(label);
     formElement.appendChild(text);
     
     self.html = formElement;

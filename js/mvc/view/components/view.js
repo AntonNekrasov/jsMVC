@@ -21,18 +21,20 @@ rpApp.view.components.View.prototype.render = function() {
     var self = this,
         view = document.createElement("DIV"),
         containers = self.settings.sections;
-
-    view.id = this.settings.id;
-    view.setAttribute("class", this.settings.class);
-
+    
+    view.id = self.settings.id;
+    view.setAttribute("class", self.settings.class);
+    
     view.style.width= "100%";
     view.style.height = "100%";
     view.style.opacity = "1.0";
 
     for(var i = 0, lth = containers.length; i < lth; i++) {
-        var container = containers[i];
+        var container = containers[i],
+            cmp = new rpApp.view.components.Container(container),
+            id = cmp.settings.id;
 
-        self[container.id] = new rpApp.view.components.Container(container);
+        self[id] = cmp;
         view.appendChild(self[container.id].html);
     }
 
