@@ -6,7 +6,7 @@ rpApp.view.components.form.Text = function(settings) {"use strict";
     var defaults = {
         "id": "",
         "label" : "",
-        "class": "",
+        "class": "rp-text",
         "placeholder" : "",
         "validation" : {} // todo: update;
     };
@@ -27,6 +27,7 @@ rpApp.view.components.form.Text.prototype.render = function() {
     
     text.type = "text";
     text.addClassName(self.settings.class);
+    text.setAttribute("placeholder", self.settings.placeholder);
     text.id = id;
     
     label.setAttribute("for", id);
