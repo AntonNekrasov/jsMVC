@@ -6,7 +6,7 @@ rpApp.view.components.form.Button = function(settings) {"use strict";
     var defaults = {
         "id": "",
         "text" : "",
-        "class": "",
+        "class": "rp-button", //todo: update;
         "placeholder" : ""
     };
 
@@ -19,12 +19,11 @@ rpApp.view.components.form.Button.prototype.render = function() {"use strict";
 
     var self = this,
         formElement = rpApp.view.components.form.Button.superclass.render.call(this),
-        button = document.createElement("button"),
+        button = document.createElement("div"),
         id = self.settings.id;
 
-    button.type = "button";
     button.addClassName(self.settings.class);
-    button.setAttribute("text", self.settings.text);
+    button.setAttribute("class", self.settings.class);
     button.id = id;
     
     button.innerText = self.settings.text;
